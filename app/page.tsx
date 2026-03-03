@@ -21,7 +21,8 @@ export default function Home() {
 
         {/* Header */}
         <div className="mb-20">
-          <div className="flex items-center gap-2 mb-8">
+          <div className="flex items-center gap-3 mb-8">
+            <img src="/zenless-logo.jpg" alt="Zenless Labs" className="w-8 h-8 rounded-lg object-cover" />
             <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
             <span className="text-xs text-blue-400 tracking-widest uppercase">Zenless Labs</span>
           </div>
