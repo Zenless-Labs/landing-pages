@@ -54,8 +54,8 @@ export default function Home() {
                 className="group flex items-center justify-between p-5 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] hover:border-blue-500/30 transition-all duration-200"
               >
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border border-blue-500/20 flex items-center justify-center text-lg">
-                    🐱
+                  <div className="w-10 h-10 rounded-lg overflow-hidden border border-blue-500/20">
+                    <img src="/kitty-logo.jpg" alt="Kitty" className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <div className="flex items-center gap-2 mb-0.5">
