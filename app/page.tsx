@@ -1,111 +1,214 @@
+const services = [
+  {
+    number: '01',
+    title: 'Embedded Media Pipelines',
+    description:
+      'Turn image-to-video into a native product action—not a separate tool your users have to learn, operate, and download from.',
+    capabilities: ['One-click generation', 'In-app delivery', 'Workflow integration'],
+  },
+  {
+    number: '02',
+    title: 'Adaptive Creative Systems',
+    description:
+      'Persistent taste, brand rules, and feedback loops that make every generation feel like your product—not a generic model demo.',
+    capabilities: ['Taste profiles', 'Brand consistency', 'Feedback loops'],
+  },
+  {
+    number: '03',
+    title: 'Inference & Model Orchestration',
+    description:
+      'We choose, route, and benchmark models behind the scenes so your team can focus on the experience instead of the model menu.',
+    capabilities: ['Automatic routing', 'Quality fallbacks', 'Cost optimization'],
+  },
+];
+
 export default function Home() {
-  const projects = [
-    {
-      name: 'Kitty',
-      tagline: 'On-chain group payments on Sui',
-      url: 'https://kitty.zenlesslabs.com',
-      status: 'live',
-      network: 'Sui Mainnet',
-    },
-  ];
-
   return (
-    <main className="min-h-screen bg-[#080b10] text-white font-mono overflow-hidden">
-      {/* Grid background */}
-      <div className="fixed inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
+    <main className="site-shell">
+      <div className="site-grid" aria-hidden="true" />
+      <div className="site-glow site-glow-one" aria-hidden="true" />
+      <div className="site-glow site-glow-two" aria-hidden="true" />
 
-      {/* Glow */}
-      <div className="fixed top-[-20%] left-[50%] -translate-x-1/2 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
+      <header className="site-header">
+        <a className="brand" href="#top" aria-label="Zenless Labs home">
+          <img src="/zenless-logo.jpg" alt="" width="30" height="30" />
+          <span className="status-dot" aria-hidden="true" />
+          <span>Zenless Labs</span>
+        </a>
+        <nav aria-label="Primary navigation">
+          <a href="#services">Services</a>
+          <a href="#work">Work</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
 
-      <div className="relative max-w-3xl mx-auto px-6 py-24">
-
-        {/* Header */}
-        <div className="mb-20">
-          <div className="flex items-center gap-3 mb-8">
-            <img src="/zenless-logo.jpg" alt="Zenless Labs" className="w-8 h-8 rounded-lg object-cover" />
-            <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
-            <span className="text-xs text-blue-400 tracking-widest uppercase">Zenless Labs</span>
-          </div>
-
-          <h1 className="text-5xl sm:text-6xl font-bold tracking-tight mb-6 leading-tight">
-            Something is<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-              cooking...
-            </span>
+      <section className="hero" id="top">
+        <div className="hero-copy">
+          <div className="eyebrow"><span>Independent AI studio</span><span>California · Worldwide</span></div>
+          <h1 aria-label="Custom AI media, built into your product.">
+            Custom AI media,
+            <span>built into your product.</span>
           </h1>
-
-          <p className="text-gray-400 text-lg max-w-lg leading-relaxed">
-            Building crypto-native tools on Sui. Small team. Real products. No VC.
+          <p>
+            <strong>One click for your users.</strong> A complete pipeline underneath—tuned to
+            your product, your taste, and your quality bar.
           </p>
+          <div className="hero-actions">
+            <a className="primary-action" href="#services">Explore services <span>↘</span></a>
+            <a className="text-action" href="#contact">Build with us <span>→</span></a>
+          </div>
         </div>
 
-        {/* Projects */}
-        <div className="mb-12">
-          <div className="text-xs text-gray-500 tracking-widest uppercase mb-6">
-            // projects
+        <div
+          className="motion-lab"
+          role="img"
+          aria-label="Animated illustration showing a still image becoming a video sequence"
+        >
+          <div className="motion-toolbar">
+            <span><i /> embedded.media_pipeline</span>
+            <span>LIVE PREVIEW</span>
           </div>
-
-          <div className="space-y-3">
-            {projects.map((p) => (
-              <a
-                key={p.name}
-                href={p.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-between p-5 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] hover:border-blue-500/30 transition-all duration-200"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-lg overflow-hidden border border-blue-500/20">
-                    <img src="/kitty-logo.jpg" alt="Kitty" className="w-full h-full object-cover" />
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2 mb-0.5">
-                      <span className="font-semibold text-white">{p.name}</span>
-                      <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">
-                        {p.status}
-                      </span>
-                    </div>
-                    <div className="text-sm text-gray-400">{p.tagline}</div>
-                  </div>
+          <div className="motion-canvas">
+            <div className="input-module">
+              <div className="module-label"><span>INPUT</span><span>01 / IMAGE</span></div>
+              <div className="source-image">
+                <div className="source-sun" />
+                <div className="source-road" />
+                <div className="source-car">
+                  <span className="car-roof" />
+                  <span className="car-body" />
+                  <span className="car-wheel wheel-left" />
+                  <span className="car-wheel wheel-right" />
                 </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-xs text-gray-600 hidden sm:block">{p.network}</span>
-                  <svg className="w-4 h-4 text-gray-600 group-hover:text-blue-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </div>
-              </a>
-            ))}
-
-            {/* Placeholder */}
-            <div className="flex items-center justify-between p-5 rounded-xl border border-white/5 bg-white/[0.01] opacity-40">
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center">
-                  <div className="w-3 h-3 rounded-full border-2 border-dashed border-gray-600 animate-spin" style={{ animationDuration: '3s' }} />
-                </div>
-                <div>
-                  <div className="text-sm text-gray-500 mb-0.5">?????</div>
-                  <div className="text-xs text-gray-600">Coming soon...</div>
-                </div>
+                <div className="scan-line" />
               </div>
-              <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-yellow-500/10 text-yellow-600 border border-yellow-500/20">
-                stealth
-              </span>
+              <div className="module-meta"><span>still_001.jpg</span><span>2048 × 1365</span></div>
+            </div>
+
+            <div className="pipeline-bridge" aria-hidden="true">
+              <span className="bridge-line" />
+              <span className="bridge-node node-one" />
+              <span className="bridge-node node-two" />
+              <span className="bridge-node node-three" />
+              <span className="bridge-label">ROUTING</span>
+            </div>
+
+            <div className="output-module">
+              <div className="module-label"><span>IN-APP OUTPUT</span><span>96 FRAMES</span></div>
+              <div className="video-window">
+                <div className="motion-frame frame-one">
+                  <span className="moving-glow" />
+                  <span className="moving-road" />
+                  <span className="moving-car" />
+                </div>
+                <div className="motion-frame frame-two">
+                  <span className="moving-glow" />
+                  <span className="moving-road" />
+                  <span className="moving-car" />
+                </div>
+                <div className="motion-frame frame-three">
+                  <span className="moving-glow" />
+                  <span className="moving-road" />
+                  <span className="moving-car" />
+                </div>
+                <div className="video-progress"><span /></div>
+              </div>
+              <div className="module-meta"><span>motion_001.mp4</span><span>00:04</span></div>
             </div>
           </div>
-        </div>
-
-        {/* Footer */}
-        <div className="flex items-center justify-between pt-8 border-t border-white/5">
-          <span className="text-xs text-gray-600">© 2026 Zenless Labs LLC</span>
-          <div className="flex items-center gap-4">
-            <a href="https://github.com/Zenless-Labs" target="_blank" rel="noopener noreferrer" className="text-xs text-gray-600 hover:text-gray-400 transition-colors">
-              GitHub
-            </a>
+          <div className="motion-footer">
+            <span>PROFILE: BRAND_01</span>
+            <span>MODEL ROUTING: AUTO</span>
+            <span>DELIVERED</span>
           </div>
         </div>
+      </section>
 
-      </div>
+      <section className="section" id="services">
+        <div className="section-heading">
+          <span className="section-kicker">// SERVICES</span>
+          <div>
+            <h2>One click in your product.<br />An entire pipeline underneath.</h2>
+            <p>We turn model capabilities into product experiences that feel obvious.</p>
+          </div>
+        </div>
+        <div className="service-grid">
+          {services.map((service) => (
+            <article className="service-card" key={service.number}>
+              <div className="service-topline">
+                <span>{service.number}</span>
+                <span className="service-arrow">↗</span>
+              </div>
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+              <ul>
+                {service.capabilities.map((capability) => <li key={capability}>{capability}</li>)}
+              </ul>
+            </article>
+          ))}
+        </div>
+        <article className="secondary-service">
+          <div className="secondary-label"><span>04</span><span>ADDITIONAL CAPABILITY</span></div>
+          <h3>On-chain Product Engineering</h3>
+          <p>
+            Wallet, payment, and ownership experiences when they add genuine product value.
+            Sui integrations available, crypto jargon optional.
+          </p>
+          <ul>
+            <li>Product onboarding</li>
+            <li>Smart contracts</li>
+            <li>Payments</li>
+          </ul>
+        </article>
+      </section>
+
+      <section className="section work-section" id="work">
+        <div className="section-heading compact-heading">
+          <span className="section-kicker">// SELECTED WORK</span>
+          <div>
+            <h2>Products, not demos.</h2>
+            <p>We build and operate our own ideas, too.</p>
+          </div>
+        </div>
+        <a className="project-card" href="https://kitty.zenlesslabs.com" target="_blank" rel="noopener noreferrer">
+          <div className="project-visual">
+            <img src="/kitty-logo.jpg" alt="Kitty" width="84" height="84" />
+            <div className="project-orbit orbit-one" />
+            <div className="project-orbit orbit-two" />
+          </div>
+          <div className="project-content">
+            <div className="project-status"><span /> LIVE PRODUCT</div>
+            <h3>Kitty</h3>
+            <p>Private group payments with on-chain settlement. Designed and shipped on Sui Mainnet.</p>
+            <span className="project-link">Visit product <b>↗</b></span>
+          </div>
+          <div className="project-index">01</div>
+        </a>
+      </section>
+
+      <section className="principles-section">
+        <div className="principle"><span>01</span><strong>Learn your taste</strong><p>Capture the creative rules and preferences that make the output yours.</p></div>
+        <div className="principle"><span>02</span><strong>Choose what works</strong><p>Route across models by quality, latency, and cost—not by hype.</p></div>
+        <div className="principle"><span>03</span><strong>Return to product</strong><p>Deliver finished media where the user already is. No download-and-reupload loop.</p></div>
+      </section>
+
+      <section className="contact-section" id="contact">
+        <span className="section-kicker">// START A CONVERSATION</span>
+        <h2>Have a product that should<br /><span>move, think, or scale?</span></h2>
+        <p>We are exploring a small number of design-partner engagements.</p>
+        <a href="https://github.com/Zenless-Labs" target="_blank" rel="noopener noreferrer">
+          Connect with Zenless Labs <span>↗</span>
+        </a>
+      </section>
+
+      <footer>
+        <div className="brand footer-brand">
+          <img src="/zenless-logo.jpg" alt="" width="22" height="22" />
+          <span>Zenless Labs</span>
+        </div>
+        <span>AI media · Inference · Product engineering</span>
+        <span>© 2026 Zenless Labs LLC</span>
+      </footer>
     </main>
   );
 }
