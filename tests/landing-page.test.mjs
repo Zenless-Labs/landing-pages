@@ -28,3 +28,10 @@ test('the configured Geist font variable is used consistently', async () => {
   assert.match(layout, /variable:\s*'--font-geist-mono'/);
   assert.match(styles, /font-family:\s*var\(--font-geist-mono\)/);
 });
+
+test('every animated output frame renders a complete car silhouette', () => {
+  assert.equal((page.match(/className="moving-car"/g) ?? []).length, 3);
+  assert.equal((page.match(/className="moving-car-roof"/g) ?? []).length, 3);
+  assert.equal((page.match(/className="moving-car-body"/g) ?? []).length, 3);
+  assert.equal((page.match(/moving-car-wheel/g) ?? []).length, 6);
+});

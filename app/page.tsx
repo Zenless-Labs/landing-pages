@@ -99,17 +99,32 @@ export default function Home() {
                 <div className="motion-frame frame-one">
                   <span className="moving-glow" />
                   <span className="moving-road" />
-                  <span className="moving-car" />
+                  <span className="moving-car">
+                    <span className="moving-car-roof" />
+                    <span className="moving-car-body" />
+                    <span className="moving-car-wheel moving-wheel-left" />
+                    <span className="moving-car-wheel moving-wheel-right" />
+                  </span>
                 </div>
                 <div className="motion-frame frame-two">
                   <span className="moving-glow" />
                   <span className="moving-road" />
-                  <span className="moving-car" />
+                  <span className="moving-car">
+                    <span className="moving-car-roof" />
+                    <span className="moving-car-body" />
+                    <span className="moving-car-wheel moving-wheel-left" />
+                    <span className="moving-car-wheel moving-wheel-right" />
+                  </span>
                 </div>
                 <div className="motion-frame frame-three">
                   <span className="moving-glow" />
                   <span className="moving-road" />
-                  <span className="moving-car" />
+                  <span className="moving-car">
+                    <span className="moving-car-roof" />
+                    <span className="moving-car-body" />
+                    <span className="moving-car-wheel moving-wheel-left" />
+                    <span className="moving-car-wheel moving-wheel-right" />
+                  </span>
                 </div>
                 <div className="video-progress"><span /></div>
               </div>

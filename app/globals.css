@@ -376,7 +376,7 @@ footer {
 }
 
 .car-body,
-.moving-car {
+.moving-car-body {
   position: absolute;
   left: 3px;
   right: 2px;
@@ -499,12 +499,39 @@ footer {
 }
 
 .moving-car {
+  position: absolute;
   width: 118px;
+  height: 54px;
   left: 19%;
   right: auto;
   bottom: 51px;
   animation: car-drive 6s ease-in-out infinite;
 }
+
+.moving-car-roof {
+  position: absolute;
+  left: 31px;
+  right: 30px;
+  bottom: 29px;
+  height: 18px;
+  border-radius: 30px 34px 0 0;
+  background: #355c86;
+  transform: skewX(-18deg);
+}
+
+.moving-car-wheel {
+  position: absolute;
+  bottom: 2px;
+  width: 19px;
+  height: 19px;
+  border: 4px solid #070b10;
+  border-radius: 50%;
+  background: #566274;
+  z-index: 2;
+}
+
+.moving-wheel-left { left: 19px; }
+.moving-wheel-right { right: 17px; }
 
 .frame-two .moving-car { left: 28%; }
 .frame-three .moving-car { left: 38%; }
