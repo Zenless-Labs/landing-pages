@@ -29,8 +29,24 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
+## Contact Form Deployment
+
+The `/contact` form sends through Resend from the server-side `/api/contact` route.
+
+Required Vercel configuration:
+
+- Environment variable: `RESEND_API_KEY`
+- Verified Resend domain: `zenlesslabs.com`
+- Vercel WAF rate-limit rule for `POST /api/contact`:
+  - Counting key: IP
+  - Fixed window: 10 minutes
+  - Limit: 5 requests
+  - Action: 429
+
+The WAF rule is a production requirement. The application additionally enforces same-origin JSON requests, a 16 KB streamed-body limit, strict field validation, a honeypot, and an eight-second Resend timeout.
+
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The easiest way to deploy a Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

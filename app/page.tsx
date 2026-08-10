@@ -38,7 +38,7 @@ export default function Home() {
         <nav aria-label="Primary navigation">
           <a href="#services">Services</a>
           <a href="#work">Work</a>
-          <a href="#contact">Contact</a>
+          <a href="/contact">Contact</a>
         </nav>
       </header>
 
@@ -55,7 +55,7 @@ export default function Home() {
           </p>
           <div className="hero-actions">
             <a className="primary-action" href="#services">Explore services <span>↘</span></a>
-            <a className="text-action" href="#contact">Build with us <span>→</span></a>
+            <a className="text-action" href="/contact">Build with us <span>→</span></a>
           </div>
         </div>
 
@@ -211,8 +211,8 @@ export default function Home() {
         <span className="section-kicker">// START A CONVERSATION</span>
         <h2>Have a product that should<br /><span>move, think, or scale?</span></h2>
         <p>We are exploring a small number of design-partner engagements.</p>
-        <a href="https://github.com/Zenless-Labs" target="_blank" rel="noopener noreferrer">
-          Connect with Zenless Labs <span>↗</span>
+        <a href="/contact">
+          Start a conversation <span aria-hidden="true">→</span>
         </a>
       </section>
 
