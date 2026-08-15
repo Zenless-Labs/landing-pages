@@ -5,9 +5,9 @@ import './globals.css';
 const mono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' });
 
 export const metadata: Metadata = {
-  title: 'Zenless Labs — Custom AI Media Pipelines',
+  title: 'Zenless Labs — AI Media & Custom 3D Prototyping',
   description:
-    'Zenless Labs builds custom, product-integrated AI media pipelines with adaptive creative profiles and automatic model orchestration.',
+    'Zenless Labs builds custom AI media pipelines and provides 3D modeling, print-ready prototyping, and small-batch 3D printing.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
