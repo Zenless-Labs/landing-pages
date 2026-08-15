@@ -22,6 +22,23 @@ const services = [
   },
 ];
 
+const additionalCapabilities = [
+  {
+    number: '04',
+    title: 'Custom 3D Prototyping',
+    description:
+      'From an idea or reference to a production-ready model and physical prototype—designed, refined, and printed for your use case.',
+    capabilities: ['3D modeling', 'Print-ready files', 'Small-batch printing'],
+  },
+  {
+    number: '05',
+    title: 'On-chain Product Engineering',
+    description:
+      'Wallet, payment, and ownership experiences when they add genuine product value. Sui integrations available, crypto jargon optional.',
+    capabilities: ['Product onboarding', 'Smart contracts', 'Payments'],
+  },
+];
+
 export default function Home() {
   return (
     <main className="site-shell">
@@ -162,19 +179,21 @@ export default function Home() {
             </article>
           ))}
         </div>
-        <article className="secondary-service">
-          <div className="secondary-label"><span>04</span><span>ADDITIONAL CAPABILITY</span></div>
-          <h3>On-chain Product Engineering</h3>
-          <p>
-            Wallet, payment, and ownership experiences when they add genuine product value.
-            Sui integrations available, crypto jargon optional.
-          </p>
-          <ul>
-            <li>Product onboarding</li>
-            <li>Smart contracts</li>
-            <li>Payments</li>
-          </ul>
-        </article>
+        <div className="secondary-services">
+          {additionalCapabilities.map((capability) => (
+            <article className="secondary-service" key={capability.number}>
+              <div className="secondary-label">
+                <span>{capability.number}</span>
+                <span>ADDITIONAL CAPABILITY</span>
+              </div>
+              <h3>{capability.title}</h3>
+              <p>{capability.description}</p>
+              <ul>
+                {capability.capabilities.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="section work-section" id="work">
@@ -221,7 +240,7 @@ export default function Home() {
           <img src="/zenless-logo.jpg" alt="" width="22" height="22" />
           <span>Zenless Labs</span>
         </div>
-        <span>AI media · Inference · Product engineering</span>
+        <span>AI media · 3D prototyping · Product engineering</span>
         <span>© 2026 Zenless Labs LLC</span>
       </footer>
     </main>

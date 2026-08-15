@@ -15,6 +15,13 @@ test('landing page presents a custom, product-integrated AI services architectur
   assert.match(page, /href="#services"/);
 });
 
+test('landing page presents custom 3D prototyping as an additional capability', () => {
+  assert.match(page, /Custom 3D Prototyping/);
+  assert.match(page, /3D modeling/);
+  assert.match(page, /Print-ready files/);
+  assert.match(page, /Small-batch printing/);
+});
+
 test('hero includes an accessible image-to-video motion illustration', () => {
   assert.match(page, /Animated illustration showing a still image becoming a video sequence/);
   assert.match(page, /motion-frame/);
