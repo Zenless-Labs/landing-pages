@@ -25,10 +25,10 @@ const services = [
 const additionalCapabilities = [
   {
     number: '04',
-    title: 'Custom 3D Prototyping',
+    title: 'Custom 3D Printing & Prototyping',
     description:
-      'From an idea or reference to a production-ready model and physical prototype—designed, refined, and printed for your use case.',
-    capabilities: ['3D modeling', 'Print-ready files', 'Small-batch printing'],
+      'Bring your own model, reference, or idea. We prepare, refine, and print custom parts and prototypes for your use case.',
+    capabilities: ['Bring your own model', 'Custom 3D modeling', 'Small-batch 3D printing'],
   },
   {
     number: '05',
@@ -240,7 +240,7 @@ export default function Home() {
           <img src="/zenless-logo.jpg" alt="" width="22" height="22" />
           <span>Zenless Labs</span>
         </div>
-        <span>AI media · 3D prototyping · Product engineering</span>
+        <span>AI media · 3D printing · Product engineering</span>
         <span>© 2026 Zenless Labs LLC</span>
       </footer>
     </main>

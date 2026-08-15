@@ -3,7 +3,7 @@ import ContactForm from './contact-form';
 
 export const metadata: Metadata = {
   title: 'Contact — Zenless Labs',
-  description: 'Tell Zenless Labs about the AI media pipeline, 3D prototype, or product system you want to build.',
+  description: 'Tell Zenless Labs about the AI media pipeline, custom 3D print, prototype, or product system you want to build.',
 };
 
 export default function ContactPage() {
@@ -42,7 +42,7 @@ export default function ContactPage() {
           <img src="/zenless-logo.jpg" alt="" width="22" height="22" />
           <span>Zenless Labs</span>
         </div>
-        <span>AI media · 3D prototyping · Product engineering</span>
+        <span>AI media · 3D printing · Product engineering</span>
         <span>© 2026 Zenless Labs LLC</span>
       </footer>
     </main>
