@@ -2336,3 +2336,11 @@ body:has(.gallery-dialog[open]) {
     width: 100%;
   }
 }
+
+.attachment-field input[type='file'] { padding: 18px; border-style: dashed; cursor: pointer; }
+.attachment-field input::file-selector-button { border: 0; border-radius: 4px; padding: 10px 14px; margin-right: 14px; background: var(--ink, #242521); color: white; cursor: pointer; font: inherit; }
+.attachment-list { list-style: none; margin: 8px 0 0; padding: 0; }
+.attachment-list li { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid #deded6; }
+.attachment-list li > span { min-width: 0; overflow-wrap: anywhere; }
+.attachment-list small { color: #74766e; white-space: nowrap; margin-left: 8px; }
+.attachment-list button { border: 0; background: none; text-decoration: underline; cursor: pointer; font: inherit; padding: 8px; }

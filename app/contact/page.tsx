@@ -6,7 +6,7 @@ import ContactForm from './contact-form';
 export const metadata: Metadata = {
   title: 'Start a project — Zenless Labs',
   description:
-    'Bring your idea, artwork, or model. Custom 3D printing, laser cutting and engraving, UV printing, and small CNC crafts for your next launch or team event.',
+    'Based in the San Francisco Bay Area, CA, serving individuals and companies. Custom 3D printing, laser cutting and engraving, UV printing, and small CNC crafts for your next launch or team event.',
 };
 export default async function ContactPage({
   searchParams,
@@ -44,6 +44,12 @@ export default async function ContactPage({
             A sketch, a brand graphic, or a finished model. From multicolor 3D
             prints to laser cutting and engraving, UV printing, and small CNC
             crafts, let’s find the right way to make it.
+          </p>
+          <p className="contact-local">
+            <strong>Based in the Bay Area, CA.</strong><br />
+            Proudly serving individuals and companies in our local community.
+            From a one-off personal piece to your team’s next launch, you’ll work
+            directly with the person making it.
           </p>
           <a className="contact-email" href="mailto:hey@zenlesslabs.com">
             hey@zenlesslabs.com <Arrow diagonal />

@@ -71,7 +71,7 @@ export default function Home() {
           <div className="scene-shade" aria-hidden="true" />
           <div className="scene-content wrap">
             <span className="eyebrow">
-              <i className="status-dot" /> Independent design & making studio
+              <i className="status-dot" /> Independent studio · Bay Area, CA
             </span>
             <h1 id="hero-title">
               From your
@@ -81,7 +81,7 @@ export default function Home() {
               <span>Into your hands.</span>
             </h1>
             <p>
-              For the teams building what’s next.
+              For people and teams building what’s next.
               <br />
               3D printing. Laser cutting & engraving.
               <br />
@@ -198,12 +198,13 @@ export default function Home() {
               Obsessed with the physical world.
             </p>
             <p>
-              Zenless Labs is an independent design and making studio founded by
-              an AI practitioner. We bring a builder’s curiosity to physical
+              Zenless Labs is an independent design and making studio in the
+              San Francisco Bay Area, California, founded by an AI practitioner. We bring a builder’s curiosity to physical
               objects: explore an idea, refine the details, and make something
               that feels unmistakably yours.
             </p>
             <p>
+              We proudly serve individuals and companies across the Bay Area.
               Work directly with the person shaping your project, from the first
               reference to the finished piece. Thoughtful design. Dedicated
               attention. A shared excitement for what it could become.

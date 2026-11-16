@@ -1,6 +1,8 @@
 'use client';
 
 import { FormEvent, useRef, useState } from 'react';
+import { upload } from '@vercel/blob/client';
+import { MAX_ATTACHMENT_BYTES, MAX_ATTACHMENTS } from '@/lib/attachment-limits';
 import { Arrow } from '../studio-components';
 
 type FormState = 'idle' | 'submitting' | 'success' | 'error';
@@ -14,6 +16,8 @@ export default function ContactForm({
   const [projectRoute, setProjectRoute] = useState('Design + make');
   const [service, setService] = useState(initialService);
   const [feedback, setFeedback] = useState('');
+  const [files, setFiles] = useState<File[]>([]);
+  const uploaded = useRef(new Map<File, string>());
   const startedAt = useRef(Date.now());
   const statusRef = useRef<HTMLParagraphElement>(null);
 
@@ -38,10 +42,29 @@ export default function ContactForm({
     };
 
     try {
+      const attachments: string[] = [];
+      for (const file of files) {
+        if (file.size > MAX_ATTACHMENT_BYTES) throw new Error(`${file.name} exceeds 30 MB.`);
+        let pathname = uploaded.current.get(file);
+        if (!pathname) {
+          const filename = file.name.replace(/[^a-zA-Z0-9._-]/g, '_').slice(-160) || 'attachment';
+          const blob = await upload(`inquiries/${crypto.randomUUID()}/${filename}`, file, {
+            access: 'private',
+            handleUploadUrl: '/api/contact/upload',
+            multipart: file.size > 5 * 1024 * 1024,
+            clientPayload: JSON.stringify({ startedAt: startedAt.current, website: data.website }),
+            onUploadProgress: ({ percentage }) => setFeedback(`Uploading ${file.name} · ${Math.round(percentage)}%`),
+          });
+          pathname = blob.pathname;
+          uploaded.current.set(file, pathname);
+        }
+        attachments.push(pathname);
+      }
+      setFeedback('Sending your brief…');
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...data, startedAt: startedAt.current }),
+        body: JSON.stringify({ ...data, attachments, startedAt: startedAt.current }),
       });
       let result: { error?: string } = {};
       try {
@@ -63,6 +86,8 @@ export default function ContactForm({
       }
 
       form.reset();
+      setFiles([]);
+      uploaded.current.clear();
       setProjectRoute('Design + make');
       setService(initialService);
       startedAt.current = Date.now();
@@ -196,6 +221,32 @@ If you know them, include quantity, event date, delivery location, budget, and a
             A few sentences are plenty. You don’t need to have it all figured
             out.
           </p>
+        </div>
+        <div className="form-field form-field-wide attachment-field">
+          <label htmlFor="attachments">Attach your files <span>Optional</span></label>
+          <p id="attachments-hint" className="field-hint">Models, artwork, photos, or a project brief. Up to 5 files, 30 MB each. Uploads are automatically deleted after 14 days.</p>
+          <input id="attachments" type="file" multiple disabled={state === 'submitting'}
+            aria-describedby="attachments-hint"
+            onChange={(event) => {
+              const selected = Array.from(event.target.files || []);
+              event.target.value = '';
+              if (files.length + selected.length > MAX_ATTACHMENTS || selected.some((file) => file.size > MAX_ATTACHMENT_BYTES)) {
+                setState('error');
+                setFeedback('Choose up to 5 files, each 30 MB or smaller.');
+                focusStatus();
+                return;
+              }
+              setFiles((current) => [...current, ...selected]);
+              setFeedback('');
+              setState('idle');
+            }} />
+          {files.length > 0 && <ul className="attachment-list">
+            {files.map((file, index) => <li key={`${file.name}-${index}`}>
+              <span>{file.name} <small>{(file.size / 1024 / 1024).toFixed(1)} MB</small></span>
+              <button type="button" disabled={state === 'submitting'} aria-label={`Remove ${file.name}`}
+                onClick={() => setFiles((current) => current.filter((_, i) => i !== index))}>Remove</button>
+            </li>)}
+          </ul>}
         </div>
         <div className="form-field form-field-wide">
           <label htmlFor="reference">

@@ -1,3 +1,6 @@
+import { head } from '@vercel/blob';
+import { ATTACHMENT_PATH, MAX_ATTACHMENT_BYTES, MAX_ATTACHMENTS } from '@/lib/attachment-limits';
+import { signAttachment } from '@/lib/attachment-links';
 import { NextResponse } from 'next/server';
 
 const RESEND_ENDPOINT = 'https://api.resend.com/emails';
@@ -5,7 +8,7 @@ const RECIPIENT = 'hey@zenlesslabs.com';
 const SENDER = 'Zenless Labs Website <website@zenlesslabs.com>';
 const MAX_BODY_BYTES = 16_384;
 const RESEND_TIMEOUT_MS = 8_000;
-const ALLOWED_FIELDS = new Set(['name', 'email', 'company', 'message', 'website', 'startedAt']);
+const ALLOWED_FIELDS = new Set(['name', 'email', 'company', 'message', 'website', 'startedAt', 'attachments']);
 
 class PayloadTooLargeError extends Error {}
 
@@ -141,6 +144,27 @@ export async function POST(request: Request) {
     );
   }
 
+  const attachmentPaths = body.attachments ?? [];
+  if (!Array.isArray(attachmentPaths) || attachmentPaths.length > MAX_ATTACHMENTS ||
+      attachmentPaths.some((path) => typeof path !== 'string' || !ATTACHMENT_PATH.test(path))) {
+    return NextResponse.json({ error: 'Please check your attachments.' }, { status: 400 });
+  }
+  let attachments: { name: string; url: string }[];
+  try {
+    attachments = await Promise.all(attachmentPaths.map(async (pathname: string) => {
+      const blob = await head(pathname);
+      if (blob.size > MAX_ATTACHMENT_BYTES) throw new Error('File too large');
+      const url = new URL('/api/contact/attachment', publicOrigin);
+      url.searchParams.set('path', pathname);
+      url.searchParams.set('signature', signAttachment(pathname));
+      return { name: pathname.split('/').pop()!, url: url.toString() };
+    }));
+  } catch {
+    return NextResponse.json({ error: 'We could not verify your attachments. Please retry or remove them.' }, { status: 400 });
+  }
+  const attachmentHtml = attachments.length ? `<h3>Attachments</h3><p>Files are automatically deleted after 14 days from upload. Download any files you need to keep.</p><ul>${attachments.map(({ name, url }) => `<li><a href="${escapeHtml(url)}">${escapeHtml(name)}</a></li>`).join('')}</ul>` : '';
+  const attachmentText = attachments.length ? '\n\nAttachments (automatically deleted after 14 days from upload):\n' + attachments.map(({ name, url }) => `${name}: ${url}`).join('\n') : '';
+
   const safeName = escapeHtml(name);
   const safeEmail = escapeHtml(email);
   const safeCompany = escapeHtml(company || 'Not provided');
@@ -168,8 +192,9 @@ export async function POST(request: Request) {
           <p><strong>Company:</strong> ${safeCompany}</p>
           <p><strong>Message:</strong></p>
           <p>${safeMessage}</p>
+          ${attachmentHtml}
         `,
-        text: `New website inquiry\n\nName: ${name}\nEmail: ${email}\nCompany: ${company || 'Not provided'}\n\n${message}`,
+        text: `New website inquiry\n\nName: ${name}\nEmail: ${email}\nCompany: ${company || 'Not provided'}\n\n${message}${attachmentText}`,
       }),
     });
   } catch {
