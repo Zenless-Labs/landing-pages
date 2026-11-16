@@ -225,6 +225,9 @@ If you know them, include quantity, event date, delivery location, budget, and a
         <div className="form-field form-field-wide attachment-field">
           <label htmlFor="attachments">Attach your files <span>Optional</span></label>
           <p id="attachments-hint" className="field-hint">Models, artwork, photos, or a project brief. Up to 5 files, 30 MB each. Uploads are automatically deleted after 14 days.</p>
+          <div className={`attachment-picker${state === 'submitting' ? ' is-disabled' : ''}`}>
+            <span className="attachment-picker-icon" aria-hidden="true">+</span>
+            <span className="attachment-picker-copy" aria-hidden="true"><strong>Choose files</strong><span>Browse models, artwork, or photos</span></span>
           <input id="attachments" type="file" multiple disabled={state === 'submitting'}
             aria-describedby="attachments-hint"
             onChange={(event) => {
@@ -240,6 +243,7 @@ If you know them, include quantity, event date, delivery location, budget, and a
               setFeedback('');
               setState('idle');
             }} />
+          </div>
           {files.length > 0 && <ul className="attachment-list">
             {files.map((file, index) => <li key={`${file.name}-${index}`}>
               <span>{file.name} <small>{(file.size / 1024 / 1024).toFixed(1)} MB</small></span>

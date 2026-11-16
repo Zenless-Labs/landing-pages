@@ -2337,10 +2337,41 @@ body:has(.gallery-dialog[open]) {
   }
 }
 
-.attachment-field input[type='file'] { padding: 18px; border-style: dashed; cursor: pointer; }
+.attachment-picker { position: relative; display: flex; align-items: center; gap: 16px; padding: 22px; border: 1px dashed #a9aca1; border-radius: 6px; background: #f7f7f2; min-width: 0; }
+.attachment-picker:hover { border-color: #30382d; background: #f0f1e9; }
+.attachment-picker:focus-within { outline: 2px solid #30382d; outline-offset: 4px; }
+.attachment-picker.is-disabled { opacity: .55; }
+.attachment-picker-icon { display: grid; place-items: center; width: 42px; height: 42px; flex-shrink: 0; border-radius: 50%; background: #e7e9df; font-size: 26px; font-weight: 300; }
+.attachment-picker-copy { display: grid; gap: 5px; min-width: 0; }
+.attachment-picker-copy strong { font-size: 15px; font-weight: 500; }
+.attachment-picker-copy > span { font-size: 12px; line-height: 1.5; color: #69705f; }
+.attachment-field .attachment-picker input[type='file'] { position: absolute; inset: 0; opacity: 0; width: 100%; height: 100%; cursor: pointer; padding: 0; }
 .attachment-field input::file-selector-button { border: 0; border-radius: 4px; padding: 10px 14px; margin-right: 14px; background: var(--ink, #242521); color: white; cursor: pointer; font: inherit; }
 .attachment-list { list-style: none; margin: 8px 0 0; padding: 0; }
 .attachment-list li { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid #deded6; }
 .attachment-list li > span { min-width: 0; overflow-wrap: anywhere; }
 .attachment-list small { color: #74766e; white-space: nowrap; margin-left: 8px; }
 .attachment-list button { border: 0; background: none; text-decoration: underline; cursor: pointer; font: inherit; padding: 8px; }
+
+/* Give the explorer room below the navigation and clear of the mobile copy. */
+@media (min-width: 801px) {
+  .scene-hero { min-height: 820px; }
+  .scene-picture { top: 90px; mask-image: linear-gradient(to bottom, transparent, black 70px); }
+  .scene-picture img { object-position: 65% top; }
+}
+@media (max-width: 800px) {
+  .nav-contact { display: none; }
+  .site-header nav { flex-direction: row; align-items: center; }
+  .scene-hero { height: 1280px; }
+  .scene-picture { top: 360px; bottom: 0; mask-image: linear-gradient(to bottom, transparent, black 100px); }
+}
+@media (max-width: 560px) {
+  .site-header { height: 78px; }
+  .scene-hero { height: max(940px, 105svh); }
+  .scene-picture { top: 160px; bottom: 0; }
+  .attachment-picker { padding: 18px 14px; gap: 12px; }
+  .attachment-picker-copy > span { font-size: 12px; }
+  .attachment-list li { align-items: flex-start; gap: 8px; }
+  .attachment-list small { display: block; margin: 4px 0 0; }
+  .attachment-list button { flex-shrink: 0; min-height: 44px; }
+}
