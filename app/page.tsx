@@ -1,248 +1,343 @@
-const services = [
+import Link from 'next/link';
+import { Arrow, Footer, Header } from './studio-components';
+import ObjectGallery from './object-gallery';
+import HeroScene from './hero-scene';
+
+const steps = [
   {
     number: '01',
-    title: 'Embedded Media Pipelines',
-    description:
-      'Turn image-to-video into a native product action—not a separate tool your users have to learn, operate, and download from.',
-    capabilities: ['One-click generation', 'In-app delivery', 'Workflow integration'],
+    title: 'It starts with your idea.',
+    text: 'A sketch, a logo, a reference, or a 3D model. Tell us what you’re imagining and the moment you’re making it for.',
+    note: 'A rough idea is a great starting point.',
   },
   {
     number: '02',
-    title: 'Adaptive Creative Systems',
-    description:
-      'Persistent taste, brand rules, and feedback loops that make every generation feel like your product—not a generic model demo.',
-    capabilities: ['Taste profiles', 'Brand consistency', 'Feedback loops'],
+    title: 'We work out the shape.',
+    text: 'We design from scratch or refine your existing file. Together, we work through the form, color, material, and details.',
+    note: 'Your vision. Our design experience.',
   },
   {
     number: '03',
-    title: 'Inference & Model Orchestration',
-    description:
-      'We choose, route, and benchmark models behind the scenes so your team can focus on the experience instead of the model menu.',
-    capabilities: ['Automatic routing', 'Quality fallbacks', 'Cost optimization'],
+    title: 'Then, we make it real.',
+    text: 'Once the design and project details are agreed, we print or craft your pieces and give the finished objects a careful check.',
+    note: 'From a digital file to something you can hold.',
   },
 ];
-
-const additionalCapabilities = [
-  {
-    number: '04',
-    title: 'Custom 3D Printing & Prototyping',
-    description:
-      'Bring your own model, reference, or idea. We prepare, refine, and print custom parts and prototypes for your use case.',
-    capabilities: ['Bring your own model', 'Custom 3D modeling', 'Small-batch 3D printing'],
-  },
-  {
-    number: '05',
-    title: 'On-chain Product Engineering',
-    description:
-      'Wallet, payment, and ownership experiences when they add genuine product value. Sui integrations available, crypto jargon optional.',
-    capabilities: ['Product onboarding', 'Smart contracts', 'Payments'],
-  },
+const questions = [
+  [
+    'Do I need a 3D model to get started?',
+    'No. A rough idea, a sketch, or a logo is enough to start the conversation. We offer custom 3D design as well as printing, and can help you figure out what the object should become.',
+  ],
+  [
+    'Can you print a model we already have?',
+    'Absolutely. Share a link to your model in the project brief. We’ll review its geometry, size, and printing requirements with you before confirming the project.',
+  ],
+  [
+    'Can you make something for our launch or team event?',
+    'That’s exactly the kind of project we love. Think custom mascots, sculptural logo objects, desk pieces, and keepsakes that connect to your product or team. Tell us about the occasion and the idea behind it.',
+  ],
+  [
+    'What can you make beyond 3D prints?',
+    'We also offer laser cutting and engraving, UV printing, and small CNC crafts. Share your design or the object you have in mind. We’ll work through suitable materials, dimensions, and finishes with you.',
+  ],
+  [
+    'What about quantity, timing, and shipping?',
+    'Every project is different. Include your estimated quantity, event date, delivery location, and any material or budget preferences in your brief. We’ll work through feasibility, timing, and a quote with you.',
+  ],
 ];
 
 export default function Home() {
   return (
-    <main className="site-shell">
-      <div className="site-grid" aria-hidden="true" />
-      <div className="site-glow site-glow-one" aria-hidden="true" />
-      <div className="site-glow site-glow-two" aria-hidden="true" />
-
-      <header className="site-header">
-        <a className="brand" href="#top" aria-label="Zenless Labs home">
-          <img src="/zenless-logo.jpg" alt="" width="30" height="30" />
-          <span className="status-dot" aria-hidden="true" />
-          <span>Zenless Labs</span>
-        </a>
-        <nav aria-label="Primary navigation">
-          <a href="#services">Services</a>
-          <a href="#work">Work</a>
-          <a href="/contact">Contact</a>
-        </nav>
-      </header>
-
-      <section className="hero" id="top">
-        <div className="hero-copy">
-          <div className="eyebrow"><span>Independent AI studio</span><span>California · Worldwide</span></div>
-          <h1 aria-label="Custom AI media, built into your product.">
-            Custom AI media,
-            <span>built into your product.</span>
-          </h1>
-          <p>
-            <strong>One click for your users.</strong> A complete pipeline underneath—tuned to
-            your product, your taste, and your quality bar.
+    <div className="site-shell site-shell-home">
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
+      <Header />
+      <main id="main">
+        <HeroScene>
+          <picture className="scene-picture">
+            <source
+              media="(max-width: 800px)"
+              srcSet="/images/explorer-mobile-zenless.webp"
+            />
+            <img
+              src="/images/explorer-hero-zenless.webp"
+              alt="Concept render of a detailed multicolor 3D printed explorer, with orange, ivory, teal, yellow, and navy parts"
+              width="1672"
+              height="941"
+              fetchPriority="high"
+            />
+          </picture>
+          <div className="scene-shade" aria-hidden="true" />
+          <div className="scene-content wrap">
+            <span className="eyebrow">
+              <i className="status-dot" /> Independent design & making studio
+            </span>
+            <h1 id="hero-title">
+              From your
+              <br />
+              imagination.
+              <br />
+              <span>Into your hands.</span>
+            </h1>
+            <p>
+              For the teams building what’s next.
+              <br />
+              3D printing. Laser cutting & engraving.
+              <br />
+              UV printing. Small CNC crafts.
+              <br className="desktop-break" /> Your idea, made in every detail.
+            </p>
+            <div className="scene-actions">
+              <Link className="button button-light" href="/contact">
+                Let’s make something <Arrow diagonal />
+              </Link>
+              <a className="text-link" href="#objects">
+                Explore the possibilities <Arrow />
+              </a>
+            </div>
+          </div>
+          <div className="scene-footer wrap">
+            <span className="micro">
+              Digital imagination. Physical expression.
+            </span>
+            <div>
+              <span className="micro">
+                THE EXPLORER / MULTICOLOR 3D PRINTING
+              </span>
+            </div>
+          </div>
+        </HeroScene>
+        <div className="capability-strip">
+          <div className="wrap">
+            <span>ONE STUDIO. MORE POSSIBILITIES.</span>
+            <span>Multicolor 3D printing</span>
+            <b>+</b>
+            <span>Laser cutting & engraving</span>
+            <b>+</b>
+            <span>UV printing</span>
+            <b>+</b>
+            <span>Small CNC crafts</span>
+            <span className="strip-arrow">↗</span>
+          </div>
+        </div>
+        <section className="objects-section wrap section-space" id="objects">
+          <div className="section-heading">
+            <div>
+              <span className="eyebrow section-number">The possibilities</span>
+              <h2>
+                Make something
+                <br />
+                worth keeping.
+              </h2>
+            </div>
+            <p>
+              A multicolor mascot. An engraved keepsake. A vivid printed
+              graphic. A small carved object. We find the right process for the
+              thing you have in mind.
+            </p>
+          </div>
+          <ObjectGallery />
+          <p className="gallery-disclaimer">
+            <span>↳</span> Explore what’s possible. Illustrative designs to
+            inspire your own project.
           </p>
-          <div className="hero-actions">
-            <a className="primary-action" href="#services">Explore services <span>↘</span></a>
-            <a className="text-action" href="/contact">Build with us <span>→</span></a>
-          </div>
-        </div>
-
-        <div
-          className="motion-lab"
-          role="img"
-          aria-label="Animated illustration showing a still image becoming a video sequence"
-        >
-          <div className="motion-toolbar">
-            <span><i /> embedded.media_pipeline</span>
-            <span>LIVE PREVIEW</span>
-          </div>
-          <div className="motion-canvas">
-            <div className="input-module">
-              <div className="module-label"><span>INPUT</span><span>01 / IMAGE</span></div>
-              <div className="source-image">
-                <div className="source-sun" />
-                <div className="source-road" />
-                <div className="source-car">
-                  <span className="car-roof" />
-                  <span className="car-body" />
-                  <span className="car-wheel wheel-left" />
-                  <span className="car-wheel wheel-right" />
-                </div>
-                <div className="scan-line" />
+        </section>
+        <section className="process-section" id="process">
+          <div className="wrap section-space">
+            <div className="section-heading">
+              <div>
+                <span className="eyebrow section-number">
+                  From first thought to final form
+                </span>
+                <h2>
+                  A good idea.
+                  <br />A close collaboration.
+                </h2>
               </div>
-              <div className="module-meta"><span>still_001.jpg</span><span>2048 × 1365</span></div>
+              <p>
+                You bring the context, the taste, the “what if.”
+                <br />
+                We bring the design thinking and the tools to make it happen.
+              </p>
             </div>
-
-            <div className="pipeline-bridge" aria-hidden="true">
-              <span className="bridge-line" />
-              <span className="bridge-node node-one" />
-              <span className="bridge-node node-two" />
-              <span className="bridge-node node-three" />
-              <span className="bridge-label">ROUTING</span>
+            <div className="process-grid">
+              {steps.map((step) => (
+                <article className="process-step" key={step.number}>
+                  <div className="step-line">
+                    <span className="micro">{step.number}</span>
+                    <Arrow />
+                  </div>
+                  <h3>{step.title}</h3>
+                  <p>{step.text}</p>
+                  <span className="step-note">{step.note}</span>
+                </article>
+              ))}
             </div>
-
-            <div className="output-module">
-              <div className="module-label"><span>IN-APP OUTPUT</span><span>96 FRAMES</span></div>
-              <div className="video-window">
-                <div className="motion-frame frame-one">
-                  <span className="moving-glow" />
-                  <span className="moving-road" />
-                  <span className="moving-car">
-                    <span className="moving-car-roof" />
-                    <span className="moving-car-body" />
-                    <span className="moving-car-wheel moving-wheel-left" />
-                    <span className="moving-car-wheel moving-wheel-right" />
-                  </span>
-                </div>
-                <div className="motion-frame frame-two">
-                  <span className="moving-glow" />
-                  <span className="moving-road" />
-                  <span className="moving-car">
-                    <span className="moving-car-roof" />
-                    <span className="moving-car-body" />
-                    <span className="moving-car-wheel moving-wheel-left" />
-                    <span className="moving-car-wheel moving-wheel-right" />
-                  </span>
-                </div>
-                <div className="motion-frame frame-three">
-                  <span className="moving-glow" />
-                  <span className="moving-road" />
-                  <span className="moving-car">
-                    <span className="moving-car-roof" />
-                    <span className="moving-car-body" />
-                    <span className="moving-car-wheel moving-wheel-left" />
-                    <span className="moving-car-wheel moving-wheel-right" />
-                  </span>
-                </div>
-                <div className="video-progress"><span /></div>
+            <div className="process-bottom">
+              <span className="micro">FROM “WHAT IF” TO “HERE IT IS.”</span>
+              <Link className="text-link" href="/contact">
+                Tell us what you’re thinking <Arrow diagonal />
+              </Link>
+            </div>
+          </div>
+        </section>
+        <section className="studio-section wrap section-space" id="studio">
+          <div className="studio-intro">
+            <span className="eyebrow section-number">The studio</span>
+            <h2>
+              Built by a mind
+              <br />
+              that lives in <span>what’s next.</span>
+            </h2>
+          </div>
+          <div className="studio-story">
+            <p className="large-copy">
+              Rooted in the AI industry.
+              <br />
+              Obsessed with the physical world.
+            </p>
+            <p>
+              Zenless Labs is an independent design and making studio founded by
+              an AI practitioner. We bring a builder’s curiosity to physical
+              objects: explore an idea, refine the details, and make something
+              that feels unmistakably yours.
+            </p>
+            <p>
+              Work directly with the person shaping your project, from the first
+              reference to the finished piece. Thoughtful design. Dedicated
+              attention. A shared excitement for what it could become.
+            </p>
+            <div className="studio-signature">
+              <span className="signature-mark">z.</span>
+              <span>
+                Small studio.
+                <br />
+                <strong>Fully invested.</strong>
+              </span>
+            </div>
+          </div>
+        </section>
+        <section className="equipment-section wrap">
+          <div className="equipment-art" aria-hidden="true">
+            <div className="equipment-grid" />
+            <span className="equipment-code micro">STUDIO HARDWARE / 001</span>
+            <div className="layer-object">
+              {Array.from({ length: 36 }, (_, i) => (
+                <span
+                  key={i}
+                  style={
+                    {
+                      '--i': i,
+                      '--layer-color': [
+                        '#e96b39',
+                        '#f1be50',
+                        '#f1e7d4',
+                        '#68b5a3',
+                        '#238c91',
+                        '#56728f',
+                        '#cd7970',
+                        '#b1c77f',
+                        '#e4a271',
+                      ][Math.floor(i / 4) % 9],
+                    } as React.CSSProperties
+                  }
+                />
+              ))}
+            </div>
+            <div className="equipment-art-bottom micro">
+              <span>MORE COLORS. MORE CHARACTER.</span>
+              <span>↗</span>
+            </div>
+          </div>
+          <div className="equipment-copy">
+            <span className="eyebrow">
+              <i className="status-dot" /> Now in the studio
+            </span>
+            <h2>
+              More color.
+              <br />
+              More possibility.
+            </h2>
+            <p>
+              Our <strong>Bambu Lab H3C</strong> supports up to 24-color
+              printing with compatible AMS expansion. Nine dedicated print tools
+              make intricate multicolor objects more practical, giving your
+              mascot, miniature, or brand idea more room for personality.
+            </p>
+            <div className="equipment-specs">
+              <div>
+                <strong>24</strong>
+                <span>Colors with AMS expansion*</span>
               </div>
-              <div className="module-meta"><span>motion_001.mp4</span><span>00:04</span></div>
+              <div>
+                <strong>H3C</strong>
+                <span>Bambu Lab platform</span>
+              </div>
+              <div>
+                <strong>&lt;6s</strong>
+                <span>Dedicated-tool changes*</span>
+              </div>
             </div>
+            <a
+              className="equipment-source"
+              href="https://blog.bambulab.com/tool-changer-game-changer-bambu-lab-presents-h3c-the-defining-new-generation-of-3d-printers/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              * Manufacturer specifications · Bambu Lab <Arrow diagonal />
+            </a>
           </div>
-          <div className="motion-footer">
-            <span>PROFILE: BRAND_01</span>
-            <span>MODEL ROUTING: AUTO</span>
-            <span>DELIVERED</span>
-          </div>
-        </div>
-      </section>
-
-      <section className="section" id="services">
-        <div className="section-heading">
-          <span className="section-kicker">// SERVICES</span>
+        </section>
+        <section className="faq-section wrap section-space">
           <div>
-            <h2>One click in your product.<br />An entire pipeline underneath.</h2>
-            <p>We turn model capabilities into product experiences that feel obvious.</p>
+            <span className="eyebrow section-number">A few good questions</span>
+            <h2>
+              Curious?
+              <br />
+              Good.
+            </h2>
+            <a className="text-link" href="mailto:hey@zenlesslabs.com">
+              Ask us anything <Arrow diagonal />
+            </a>
           </div>
-        </div>
-        <div className="service-grid">
-          {services.map((service) => (
-            <article className="service-card" key={service.number}>
-              <div className="service-topline">
-                <span>{service.number}</span>
-                <span className="service-arrow">↗</span>
-              </div>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-              <ul>
-                {service.capabilities.map((capability) => <li key={capability}>{capability}</li>)}
-              </ul>
-            </article>
-          ))}
-        </div>
-        <div className="secondary-services">
-          {additionalCapabilities.map((capability) => (
-            <article className="secondary-service" key={capability.number}>
-              <div className="secondary-label">
-                <span>{capability.number}</span>
-                <span>ADDITIONAL CAPABILITY</span>
-              </div>
-              <h3>{capability.title}</h3>
-              <p>{capability.description}</p>
-              <ul>
-                {capability.capabilities.map((item) => <li key={item}>{item}</li>)}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section work-section" id="work">
-        <div className="section-heading compact-heading">
-          <span className="section-kicker">// SELECTED WORK</span>
-          <div>
-            <h2>Products, not demos.</h2>
-            <p>We build and operate our own ideas, too.</p>
+          <div className="faq-list">
+            {questions.map(([question, answer]) => (
+              <details key={question}>
+                <summary>
+                  {question}
+                  <span className="faq-plus" aria-hidden="true">
+                    +
+                  </span>
+                </summary>
+                <p>{answer}</p>
+              </details>
+            ))}
           </div>
-        </div>
-        <a className="project-card" href="https://kitty.zenlesslabs.com" target="_blank" rel="noopener noreferrer">
-          <div className="project-visual">
-            <img src="/kitty-logo.jpg" alt="Kitty" width="84" height="84" />
-            <div className="project-orbit orbit-one" />
-            <div className="project-orbit orbit-two" />
+        </section>
+        <section className="closing-section">
+          <div className="wrap">
+            <span className="eyebrow">
+              Custom objects for teams building what’s next
+            </span>
+            <h2>
+              Your next launch,
+              <br />
+              <span>in good hands.</span>
+            </h2>
+            <div className="closing-bottom">
+              <p>
+                Send a sketch, a model, or a brief. We’ll work out the design,
+                materials, and details with you.
+              </p>
+              <Link className="button button-light" href="/contact">
+                Start a project <Arrow diagonal />
+              </Link>
+            </div>
           </div>
-          <div className="project-content">
-            <div className="project-status"><span /> LIVE PRODUCT</div>
-            <h3>Kitty</h3>
-            <p>Private group payments with on-chain settlement. Designed and shipped on Sui Mainnet.</p>
-            <span className="project-link">Visit product <b>↗</b></span>
-          </div>
-          <div className="project-index">01</div>
-        </a>
-      </section>
-
-      <section className="principles-section">
-        <div className="principle"><span>01</span><strong>Learn your taste</strong><p>Capture the creative rules and preferences that make the output yours.</p></div>
-        <div className="principle"><span>02</span><strong>Choose what works</strong><p>Route across models by quality, latency, and cost—not by hype.</p></div>
-        <div className="principle"><span>03</span><strong>Return to product</strong><p>Deliver finished media where the user already is. No download-and-reupload loop.</p></div>
-      </section>
-
-      <section className="contact-section" id="contact">
-        <span className="section-kicker">// START A CONVERSATION</span>
-        <h2>Have a product that should<br /><span>move, think, or scale?</span></h2>
-        <p>We are exploring a small number of design-partner engagements.</p>
-        <a href="/contact">
-          Start a conversation <span aria-hidden="true">→</span>
-        </a>
-      </section>
-
-      <footer>
-        <div className="brand footer-brand">
-          <img src="/zenless-logo.jpg" alt="" width="22" height="22" />
-          <span>Zenless Labs</span>
-        </div>
-        <span>AI media · 3D printing · Product engineering</span>
-        <span>© 2026 Zenless Labs LLC</span>
-      </footer>
-    </main>
+        </section>
+      </main>
+      <Footer />
+    </div>
   );
 }

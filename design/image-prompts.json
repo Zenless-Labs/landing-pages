@@ -1,0 +1,18 @@
+{
+  "method": "Built-in image generation",
+  "purpose": "Illustrative concept renders, not photographs of client work.",
+  "assets": [
+    {
+      "file": "public/images/orbit-concept.webp",
+      "prompt": "Use case: product-mockup. Asset type: premium 3D printing studio website hero artwork, wide landscape 1536x1024. Create an extremely beautiful editorial product photograph / realistic concept render of a single sculptural orange twisted torus / continuous trefoil loop, an interesting physically plausible 3D printed desk sculpture. Sculpture is chunky, rounded, tactile matte vivid vermilion orange, very fine visible horizontal FDM print layers, impeccably crafted. Standing on one curve on a warm pale gray/off-white seamless studio surface, object centered, fills 72 percent height, with generous negative space on all sides. Three quarter view, soft museum studio lighting from upper left, realistic diffuse contact shadow falling right. Architectural design magazine art direction, restrained, sophisticated, high-end, quiet futuristic aesthetic. Background uniform warm light gray #eeede9, not a gradient graphic. No text, logo, brand, watermark, additional objects, humans, plinths or borders. This is a concept, not a real client project."
+    },
+    {
+      "file": "public/images/mascots-concept.webp",
+      "prompt": "Use case: product-mockup. Asset type: landscape 1536x1024 concept product image for a sophisticated custom 3D printing studio. Editorial still life of three adorable abstract collectible desk mascots, original invented design: small chunky rounded little robot spirits with soft capsule heads and bodies, tiny two black dot eyes inset, simple stubby feet, no arms. One taller matte charcoal black mascot center rear, one medium warm chalk white mascot left front and one smaller vivid vermilion orange mascot right front. Objects made of matte FDM 3D printed plastic with very subtle closely spaced horizontal layer lines. Very elegant physical design objects for tech team swag. Entire group sits on warm light gray seamless floor and backdrop #eeede9. Soft directional daylight, rich contact shadows, ultra high quality realistic product photography, three quarter view, group centered with spacious margins 20 percent, restrained art direction. No labels, no text, no logos, no watermark, no other objects. Not any known character or brand. Clearly a concept product image."
+    },
+    {
+      "file": "public/images/tokens-concept.webp",
+      "prompt": "Use case: product-mockup. Asset type: landscape editorial product image 1536x1024 for a bespoke 3D printing studio. Sophisticated still life of custom geometric launch-event keepsakes: three thick matte plastic rounded square key tags, one vivid vermilion orange, one warm white, one charcoal black, each with an embossed minimal abstract four-point asterisk symbol, and with a tiny metal split ring through one corner. The three tags arranged artfully diagonally in a loose stack with overlap on warm pale gray seamless surface #eeede9. Close three-quarter overhead view, group fills 65 percent image width, generous margins. Clearly visible fine FDM horizontal print layer texture on edges, premium tactile objects. Museum-quality studio photography, soft daylight and realistic shadows, restrained stylish design magazine aesthetic. No text, no existing brand logos, no watermark, no extra objects, not mockup of an actual customer order."
+    }
+  ]
+}

@@ -1,50 +1,79 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
+import { Arrow, Footer, Header } from '../studio-components';
 import ContactForm from './contact-form';
 
 export const metadata: Metadata = {
-  title: 'Contact — Zenless Labs',
-  description: 'Tell Zenless Labs about the AI media pipeline, custom 3D print, prototype, or product system you want to build.',
+  title: 'Start a project — Zenless Labs',
+  description:
+    'Bring your idea, artwork, or model. Custom 3D printing, laser cutting and engraving, UV printing, and small CNC crafts for your next launch or team event.',
 };
-
-export default function ContactPage() {
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ service?: string | string[] }>;
+}) {
+  const { service } = await searchParams;
+  const initialService =
+    typeof service === 'string' &&
+    [
+      '3D printing',
+      'Laser cutting & engraving',
+      'UV printing',
+      'CNC crafts',
+    ].includes(service)
+      ? service
+      : 'Help me choose';
   return (
-    <main className="site-shell contact-page-shell">
-      <div className="site-grid" aria-hidden="true" />
-      <div className="site-glow site-glow-one" aria-hidden="true" />
-
-      <header className="site-header">
-        <a className="brand" href="/" aria-label="Zenless Labs home">
-          <img src="/zenless-logo.jpg" alt="" width="30" height="30" />
-          <span className="status-dot" aria-hidden="true" />
-          <span>Zenless Labs</span>
-        </a>
-        <nav aria-label="Contact page navigation">
-          <a href="/">← Home</a>
-          <a href="mailto:hey@zenlesslabs.com">Email</a>
-        </nav>
-      </header>
-
-      <section className="contact-page">
+    <div className="site-shell contact-shell">
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
+      <Header contact />
+      <main id="main" className="contact-page wrap">
         <div className="contact-intro">
-          <span className="section-kicker">// START A CONVERSATION</span>
-          <h1>Tell us what should<br /><span>move, think, or scale.</span></h1>
+          <span className="eyebrow section-number">
+            A good thing starts with a conversation
+          </span>
+          <h1>
+            What’s on
+            <br />
+            your <span>mind?</span>
+          </h1>
           <p>
-            Share the product, workflow, 3D prototype, or creative system you have in mind. We’ll respond from
-            <a href="mailto:hey@zenlesslabs.com"> hey@zenlesslabs.com</a>.
+            A sketch, a brand graphic, or a finished model. From multicolor 3D
+            prints to laser cutting and engraving, UV printing, and small CNC
+            crafts, let’s find the right way to make it.
           </p>
-          <div className="contact-availability"><i /> Accepting select design-partner engagements</div>
+          <a className="contact-email" href="mailto:hey@zenlesslabs.com">
+            hey@zenlesslabs.com <Arrow diagonal />
+          </a>
+          <figure className="contact-object">
+            <Image
+              src="/images/multicolor-concept.webp"
+              width={1536}
+              height={1024}
+              alt="Concept render of an intricate multicolor miniature world"
+              sizes="(max-width: 800px) 100vw, 40vw"
+            />
+            <figcaption className="micro">
+              SMALL OBJECTS. BIG PERSONALITY.
+            </figcaption>
+          </figure>
+          <div className="contact-note">
+            <span className="status-dot" />
+            <p>
+              Direct to the studio.
+              <br />
+              <span>
+                A real conversation with the person making your project.
+              </span>
+            </p>
+          </div>
         </div>
-        <ContactForm />
-      </section>
-
-      <footer>
-        <div className="brand footer-brand">
-          <img src="/zenless-logo.jpg" alt="" width="22" height="22" />
-          <span>Zenless Labs</span>
-        </div>
-        <span>AI media · 3D printing · Product engineering</span>
-        <span>© 2026 Zenless Labs LLC</span>
-      </footer>
-    </main>
+        <ContactForm initialService={initialService} />
+      </main>
+      <Footer />
+    </div>
   );
 }

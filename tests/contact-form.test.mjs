@@ -11,7 +11,10 @@ test('homepage contact calls to action open the dedicated contact page', async (
 });
 
 test('contact page collects project details with accessible labels', async () => {
-  const page = await readFile(new URL('app/contact/contact-form.tsx', root), 'utf8');
+  const page = await readFile(
+    new URL('app/contact/contact-form.tsx', root),
+    'utf8',
+  );
   for (const field of ['name', 'email', 'company', 'message']) {
     assert.match(page, new RegExp(`htmlFor="${field}"`));
     assert.match(page, new RegExp(`(?:id|name)="${field}"`));
@@ -20,11 +23,14 @@ test('contact page collects project details with accessible labels', async () =>
   assert.match(page, /aria-atomic="true"/);
   assert.match(page, /fetch\('\/api\/contact'/);
   assert.match(page, /statusRef/);
-  assert.match(page, /parsed && typeof parsed === 'object'/);
+  assert.match(page, /parsed\s*&&\s*typeof parsed === 'object'/);
 });
 
 test('contact API uses a fixed recipient and validates untrusted submissions', async () => {
-  const route = await readFile(new URL('app/api/contact/route.ts', root), 'utf8');
+  const route = await readFile(
+    new URL('app/api/contact/route.ts', root),
+    'utf8',
+  );
   assert.match(route, /process\.env\.RESEND_API_KEY/);
   assert.match(route, /https:\/\/api\.resend\.com\/emails/);
   assert.match(route, /const RECIPIENT = 'hey@zenlesslabs\.com'/);

@@ -1,0 +1,75 @@
+{
+  "method": "Built-in image generation",
+  "purpose": "Gallery inspiration and branded hero edits. Reference photos were not published as gallery images.",
+  "assets": [
+    {
+      "key": "filament-landscape",
+      "prompt": "Use case: product-mockup. Create an ORIGINAL landscape 1536x1024 premium product photograph of a framed 3D filament painting, not a paper print. Subject of the painting: a striking original Japanese-inspired landscape of a huge ivory moon above flowing dark navy ocean waves, teal mountain silhouettes, tiny ochre sun reflections. Layered colored PLA filament builds an intricate shallow bas-relief; visible fine closely spaced extrusion lines and stepped tonal layers, graphic limited palette navy teal ivory ochre. A thin matte black rectangular frame leans on a warm pale grey studio wall, three-quarter angle, with raking daylight revealing tactile relief. One elegant artwork, entire frame visible, occupies 70 percent of canvas with spacious margins. No actual reference artwork reproduced, no known characters, no logos or text, no watermark, no factory, no props. Editorial design studio photography. This is filament painting, NOT oil paint, brushstrokes, canvas, thick sculpture or knitting.",
+      "source": "/home/ubuntu/.codex/generated_images/01a1e0d1-5b48-79c2-afc5-4b7c6a972185/exec-3a5d265a-915c-4e12-9812-40a399f36381.png",
+      "file": "public/images/filament-landscape.webp"
+    },
+    {
+      "key": "filament-cat",
+      "prompt": "Use case: product-mockup. Create an ORIGINAL landscape 1536x1024 studio product photograph of a small square 3D filament painting in a slim charcoal frame, on pale warm-grey seamless background. Artwork is an original graphic portrait of a curious charcoal-black cat in three-quarter view with bright amber eyes, against an intricate teal, ivory and ochre botanical abstract background. NOT a copy of any supplied image. Show realistic shallow layered colored plastic relief and tightly packed thin 3D-print filament paths, beautiful stratified contours in whiskers, fur and leaves. Precise high-quality print finish without loose filament stringing. Four-color restricted palette, strong designer poster composition translated into a thin tactile bas-relief. Entire frame visible with generous margins; tilted slightly backward on a minimal stand, soft diagonal daylight revealing relief, no text, no watermark, no logo, no extra objects, no famous characters. This is filament painting, NOT a flat paper print, NOT oil paint, NOT knitted yarn.",
+      "source": "/home/ubuntu/.codex/generated_images/01a1e0d1-5b48-79c2-afc5-4b7c6a972185/exec-3a23a82e-d813-4109-8e5d-9aefd710da94.png",
+      "file": "public/images/filament-cat.webp"
+    },
+    {
+      "key": "laser-topography",
+      "prompt": "Landscape 1536x1024 premium editorial product photograph of an original small laser-cut layered birch plywood topographic landscape sculpture, five thin precise stacked contour layers forming an abstract island and lake, with a tiny circular engraved coordinate-like geometric marker but NO letters or numbers. One desk-sized piece about 15cm wide, warm natural wood with delicately dark cut edges and elegant shallow relief. Pale warm-grey seamless studio surface, diagonal soft daylight, three-quarter overhead view, spacious margins with entire object occupying 65 percent width. Tactile and understated gift for a creative technology team. No logos, no stars, no asterisks, no machinery, no text or watermark. Must visibly be made from stacked laser-cut thin sheets, not a solid CNC carving.",
+      "source": "/home/ubuntu/.codex/generated_images/01a1e0d1-5b48-79c2-afc5-4b7c6a972185/exec-bc67242d-87c2-405a-b588-2c79d620e115.png",
+      "file": "public/images/laser-topography.webp"
+    },
+    {
+      "key": "cnc-tray",
+      "prompt": "Landscape 1536x1024 premium editorial studio product photograph of a single beautifully CNC-carved solid walnut desktop catchall, oval capsule shaped with two asymmetric smoothly milled recesses and clean terraced contours. Rich real walnut grain, matte oiled finish, subtle milling texture, gently radiused edges, contemporary understated industrial design. Just the tray with no accompanying token, no decoration, no logo, no asterisk, no star or radial symbol anywhere. Entire tray centered on a pale warm-grey seamless studio surface, soft directional daylight, three-quarter overhead view, generous negative space, occupies 70 percent width. A plausible small CNC craft, about 18cm wide.",
+      "source": "/home/ubuntu/.codex/generated_images/01a1e0d1-5b48-79c2-afc5-4b7c6a972185/exec-0320e5f0-6e9b-41ef-8e1a-9a452a76f878.png",
+      "file": "public/images/cnc-tray.webp"
+    },
+    {
+      "key": "cnc-wave",
+      "prompt": "Landscape 1536x1024 refined product photograph of two original CNC-machined small solid maple desk objects: a low sculptural rectangular card holder with a precisely milled curved wave profile and narrow slot, and a rounded rectangular coaster with three flowing shallow machined channels. Warm pale maple woodgrain, subtle toolpath texture, fine eased edges, matte finish. Quiet contemporary design for a startup team's desks. Objects centered, occupy 65 percent image width, on pale warm-grey seamless studio background, three-quarter view and soft diagonal daylight. NO cards or text, NO logos, NO asterisks, NO starbursts or stars, NO radial symbols. Show realistic solid-wood machined surfaces.",
+      "source": "/home/ubuntu/.codex/generated_images/01a1e0d1-5b48-79c2-afc5-4b7c6a972185/exec-91f27b60-6913-406e-90bc-4faf3143ce22.png",
+      "file": "public/images/cnc-wave.webp"
+    },
+    {
+      "key": "explorer-hero-zenless",
+      "refs": [
+        "/home/ubuntu/Dev/landing-pages/public/images/explorer-hero.webp",
+        "/home/ubuntu/Dev/landing-pages/public/zenless-logo.jpg"
+      ],
+      "prompt": "Edit ONLY the chest badge in the FIRST image. The SECOND image is the Zenless brand emblem reference. Replace the two horizontal raised teal bars on the explorer's teal chest panel with a small ivory raised Zenless outlined angular Z emblem, accurately following the second image's Z silhouette and central stepped diagonal detail. Keep the existing rounded teal badge backing. Do not reproduce the logo reference's background, construction lines, circles or gradient. Make the ivory emblem look physically 3D printed with fine layer lines, matching perspective and lighting. Preserve absolutely everything else: exact wide landscape canvas and composition, robot size and position, all limbs, face, eyes, helmet, yellow backpack, platform, orange/teal/navy/ivory materials, dark negative space on the left, background and cinematic lighting. No added text, watermarks or other modifications. This is a precise small local edit to the chest.",
+      "source": "/home/ubuntu/.codex/generated_images/01a1e0d1-5b48-79c2-afc5-4b7c6a972185/exec-adadb345-2efe-43d1-9448-b5ba7946d19b.png",
+      "file": "public/images/explorer-hero-zenless.webp"
+    },
+    {
+      "key": "explorer-mobile-zenless",
+      "refs": [
+        "/home/ubuntu/Dev/landing-pages/public/images/explorer-mobile.webp",
+        "/home/ubuntu/Dev/landing-pages/public/zenless-logo.jpg"
+      ],
+      "prompt": "Edit ONLY the chest badge in the FIRST image. The SECOND image is the Zenless brand emblem reference. Replace the two horizontal raised teal bars on the explorer's teal chest panel with a small ivory raised Zenless outlined angular Z emblem, accurately following the second image's Z silhouette and central stepped diagonal detail. Keep the existing rounded teal badge backing. Do not reproduce the logo reference's background, construction lines, circles or gradient. Make the ivory emblem look physically 3D printed with fine layer lines, matching perspective and lighting. Preserve absolutely everything else: exact portrait canvas and composition, robot size and position, all limbs, face, eyes, helmet, yellow backpack, platform, orange/teal/navy/ivory materials, dark negative space above the robot, background and cinematic lighting. No added text, watermarks or other modifications. This is a precise small local edit to the chest.",
+      "source": "/home/ubuntu/.codex/generated_images/01a1e0d1-5b48-79c2-afc5-4b7c6a972185/exec-3e461131-cc1a-482a-974b-3df228152da1.png",
+      "file": "public/images/explorer-mobile-zenless.webp"
+    },
+    {
+      "key": "uv-founding-angled",
+      "refs": [
+        "/home/ubuntu/.codex/generated_images/01a1e0d1-5b48-79c2-afc5-4b7c6a972185/exec-46ef8ee6-7248-428f-9e84-aa9bbc947bb3.png",
+        "/home/ubuntu/Dev/landing-pages/public/zenless-logo.jpg"
+      ],
+      "prompt": "Edit first input image: rotate the entire acrylic Founding Day plaque to a more pronounced elegant three-quarter view, about 25 degrees around its vertical axis, showing the right side edge thickness. Keep the plaque upright standing on its base, with camera slightly above. CRITICAL: the blue Z emblem, every inscription and divider line are FLAT UV INK ON THE SAME FRONT PLANE; all must share exactly the same perspective foreshortening and vertical/horizontal vanishing points as the acrylic face. The Z must NOT face the camera independently or float in space. Match the outlined angular Z silhouette from second reference exactly including its stepped diagonal detail, with no background or construction lines. Preserve cobalt panel, clear thick acrylic, soft natural lighting, pale warm-grey backdrop. Preserve all exact text: 'Founding Day', 'Zenless Labs', '2026', 'From your imagination. Into your hands.' Final tagline may occupy two lines. Entire plaque visible with spacious margins, landscape1536x1024. No other objects, hands, labels, watermarks or logos.",
+      "source": "/home/ubuntu/.codex/generated_images/01a1e0d1-5b48-79c2-afc5-4b7c6a972185/exec-5fc833ef-a548-4545-b9e1-7d0d29ddf5c1.png",
+      "file": "public/images/uv-founding-angled.webp"
+    },
+    {
+      "key": "tpu-coffee-mat",
+      "refs": [
+        "/home/ubuntu/Dev/landing-pages/public/zenless-logo.jpg"
+      ],
+      "prompt": "Use case: product-mockup. Landscape1536x1024 high-end product photograph of a flexible TPU 3D-printed coffee mat with rounded square corners, about18cm across, dark muted teal color, slim raised perimeter and precise fine parallel ribbed surface channels. A small contrasting ivory Zenless Z emblem is integrated flush into the near-right corner, accurately matching the outlined angular Z from the reference with its stepped central diagonal; no construction lines or gradient background. Show ONE small corner of the mat gently curled upwards to clearly convey soft rubbery flexibility, not rigid plastic; the other corners rest flat. One understated ivory espresso cup sits toward the back-left of the mat, leaving logo clearly visible, subtle fine FDM extrusion texture on the TPU ribs. Entire mat visible, three-quarter overhead view on warm pale-grey seamless studio surface, soft daylight, tactile realistic premium product photography with generous margins. No hand, no coffee machine, no text, no watermark, no asterisk or star logos. Original studio product inspiration.",
+      "source": "/home/ubuntu/.codex/generated_images/01a1e0d1-5b48-79c2-afc5-4b7c6a972185/exec-e458e308-d449-4a08-8b5b-3f8f2f11783d.png",
+      "file": "public/images/tpu-coffee-mat.webp"
+    }
+  ]
+}
