@@ -71,7 +71,7 @@ export default function Home() {
           <div className="scene-shade" aria-hidden="true" />
           <div className="scene-content wrap">
             <span className="eyebrow">
-              <i className="status-dot" /> Independent studio · Bay Area, CA
+              <i className="status-dot" /> Independent studio · San Francisco Bay Area, CA
             </span>
             <h1 id="hero-title">
               From your
@@ -204,7 +204,7 @@ export default function Home() {
               that feels unmistakably yours.
             </p>
             <p>
-              We proudly serve individuals and companies across the Bay Area.
+              We proudly serve individuals and companies across the San Francisco Bay Area.
               Work directly with the person shaping your project, from the first
               reference to the finished piece. Thoughtful design. Dedicated
               attention. A shared excitement for what it could become.

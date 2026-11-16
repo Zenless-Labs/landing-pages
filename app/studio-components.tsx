@@ -56,7 +56,7 @@ export function Footer() {
       <Link className="brand" href="/">
         zenless<span className="brand-labs">labs</span>
       </Link>
-      <span>Bay Area, California. Independently made.</span>
+      <span>San Francisco Bay Area, California. Independently made.</span>
       <a href="mailto:hey@zenlesslabs.com">
         Say hello <Arrow diagonal />
       </a>

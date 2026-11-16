@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   ),
   title: 'Zenless Labs — Ideas, Made Physical',
   description:
-    'Bay Area, CA design and making studio for individuals and companies. Custom multicolor 3D printing, laser cutting and engraving, UV printing, and small CNC crafts for teams building what’s next. Bring your idea, artwork, or model.',
+    'San Francisco Bay Area, CA design and making studio for individuals and companies. Custom multicolor 3D printing, laser cutting and engraving, UV printing, and small CNC crafts for teams building what’s next. Bring your idea, artwork, or model.',
   openGraph: {
     title: 'Zenless Labs — Ideas, Made Physical',
     description:

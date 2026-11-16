@@ -46,7 +46,7 @@ export default async function ContactPage({
             crafts, let’s find the right way to make it.
           </p>
           <p className="contact-local">
-            <strong>Based in the Bay Area, CA.</strong><br />
+            <strong>Based in the San Francisco Bay Area, CA.</strong><br />
             Proudly serving individuals and companies in our local community.
             From a one-off personal piece to your team’s next launch, you’ll work
             directly with the person making it.
